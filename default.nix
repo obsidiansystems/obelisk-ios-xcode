@@ -6,6 +6,7 @@
 , displayName
 , category # https://developer.apple.com/documentation/bundleresources/information_property_list/lsapplicationcategorytype
 , bundleId
+, iconFile # 1024x1024 png
 }:
 pkgs.stdenvNoCC.mkDerivation {
   name = "obelisk-ios-xcode";
@@ -28,5 +29,6 @@ pkgs.stdenvNoCC.mkDerivation {
     cp ${iosApp}/frontend.app/config.files $out/
     cp ${iosApp}/frontend.app/index.html $out/
     cp ${libfrontend}/bin/libfrontend.a $out/app/lib/
+    cp ${iconFile} $out/app/Assets.xcassets/AppIcon.appiconset/Icon-1024.png
   '';
 }
