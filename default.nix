@@ -7,6 +7,9 @@
 , category # https://developer.apple.com/documentation/bundleresources/information_property_list/lsapplicationcategorytype
 , bundleId
 , iconFile # 1024x1024 png
+, teamId
+, marketingVersion
+, currentProjectVersion
 }:
 pkgs.stdenvNoCC.mkDerivation {
   name = "obelisk-ios-xcode";
@@ -21,6 +24,9 @@ pkgs.stdenvNoCC.mkDerivation {
       --replace "@PRODUCT_NAME@" "${productName}" \
       --replace "@DISPLAY_NAME@" "${displayName}" \
       --replace "@CATEGORY@" "${category}" \
+      --replace "@MARKETING_VERSION@" "${marketingVersion}" \
+      --replace "@CURRENT_PROJECT_VERSION@" "${currentProjectVersion}" \
+      --replace "@TEAMID@" "${teamId}" \
       --replace "@BUNDLE_ID@" "${bundleId}"
     cp -r app.xcodeproj $out/
     cp index.html $out/
