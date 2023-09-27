@@ -10,15 +10,12 @@
 , teamId
 , marketingVersion
 , currentProjectVersion
+, inspectable ? false
 }:
 pkgs.stdenvNoCC.mkDerivation {
   name = "obelisk-ios-xcode";
   src = ./.;
   installPhase = ''
-    mkdir $out
-    cp -r app $out/
-    mkdir -p $out/app/lib
-
     substituteInPlace app.xcodeproj/project.pbxproj \
       --replace "@APP_NAME@" "${appName}" \
       --replace "@PRODUCT_NAME@" "${productName}" \
@@ -28,6 +25,13 @@ pkgs.stdenvNoCC.mkDerivation {
       --replace "@CURRENT_PROJECT_VERSION@" "${currentProjectVersion}" \
       --replace "@TEAMID@" "${teamId}" \
       --replace "@BUNDLE_ID@" "${bundleId}"
+
+    substituteInPlace app/ViewController.m \
+      --replace "_webView.inspectable = NO" "_webView.inspectable = ${if inspectable then "YES" else "NO"}"
+
+    mkdir $out
+    cp -r app $out/
+    mkdir -p $out/app/lib
     cp -r app.xcodeproj $out/
     cp index.html $out/
     cp -r ${iosApp}/frontend.app/static $out/

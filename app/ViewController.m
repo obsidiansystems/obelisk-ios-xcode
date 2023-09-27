@@ -18,10 +18,12 @@ extern void callWithWebView(WKWebView *, HsStablePtr);
 
 - (void)loadView {
     [super loadView];
-    // WKWebViewConfiguration *theConfiguration = [[WKWebViewConfiguration alloc] init];
-    // [theConfiguration.preferences setValue:@YES forKey:@"developerExtrasEnabled"];
     _webView = [[WKWebView alloc] init];
     _webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    if (@available(iOS 16.4, *)) {
+      _webView.inspectable = NO;
+    }else {
+    }
     self.view = _webView;
 }
 
