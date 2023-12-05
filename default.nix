@@ -11,6 +11,11 @@
 , marketingVersion
 , currentProjectVersion
 , inspectable ? false
+, supportedOrientations ? "UIInterfaceOrientationPortrait" # space-separated, see https://developer.apple.com/documentation/uikit/uiinterfaceorientation?language=objc for options
+, supportedOrientationsIpad ? "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown"
+, iphoneOSDeploymentTarget ? "17.0"
+, targetedDeviceFamily ? "1" # comma-separated, 1 for iphone, 2 for ipad. see https://developer.apple.com/library/archive/documentation/DeveloperTools/Reference/XcodeBuildSettingRef/1-Build_Setting_Reference/build_setting_ref.html#//apple_ref/doc/uid/TP40003931-CH3-SW165 
+, uiStatusBarStyle ? "UIStatusBarStyleDefault" # see https://developer.apple.com/documentation/uikit/uistatusbarstyle?language=objc
 }:
 pkgs.stdenvNoCC.mkDerivation {
   name = "obelisk-ios-xcode";
@@ -24,7 +29,12 @@ pkgs.stdenvNoCC.mkDerivation {
       --replace "@MARKETING_VERSION@" "${marketingVersion}" \
       --replace "@CURRENT_PROJECT_VERSION@" "${currentProjectVersion}" \
       --replace "@TEAMID@" "${teamId}" \
-      --replace "@BUNDLE_ID@" "${bundleId}"
+      --replace "@BUNDLE_ID@" "${bundleId}" \
+      --replace "@SUPPORTED_ORIENTATIONS@" "${supportedOrientations}" \
+      --replace "@SUPPORTED_ORIENTATIONS_IPAD@" "${supportedOrientationsIpad}" \
+      --replace "@IPHONEOS_DEPLOYMENT_TARGET@" "${iphoneOSDeploymentTarget}" \
+      --replace "@TARGETED_DEVICE_FAMILY@" "${targetedDeviceFamily}" \
+      --replace "@UI_STATUS_BAR_STYLE@" "${uiStatusBarStyle}"
 
     substituteInPlace app/ViewController.m \
       --replace "_webView.inspectable = NO" "_webView.inspectable = ${if inspectable then "YES" else "NO"}"

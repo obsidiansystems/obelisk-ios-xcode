@@ -322,13 +322,14 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = app/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "@DISPLAY_NAME@";
-				INFOPLIST_KEY_LSApplicationCategoryType = @CATEGORY@;
+				INFOPLIST_KEY_LSApplicationCategoryType = "@CATEGORY@";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				INFOPLIST_KEY_UIStatusBarStyle = @UI_STATUS_BAR_STYLE@;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "@SUPPORTED_ORIENTATIONS@";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "@SUPPORTED_ORIENTATIONS_IPAD@";
+				IPHONEOS_DEPLOYMENT_TARGET = @IPHONEOS_DEPLOYMENT_TARGET@;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -348,7 +349,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "@TARGETED_DEVICE_FAMILY@";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/app/include/**";
 			};
 			name = Debug;
@@ -371,9 +372,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				INFOPLIST_KEY_UIStatusBarStyle = @UI_STATUS_BAR_STYLE@;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "@SUPPORTED_ORIENTATIONS@";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "@SUPPORTED_ORIENTATIONS_IPAD";
+				IPHONEOS_DEPLOYMENT_TARGET = @IPHONEOS_DEPLOYMENT_TARGET@;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -394,7 +396,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "@TARGETED_DEVICE_FAMILY@";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/app/include/**";
 			};
 			name = Release;
