@@ -374,7 +374,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UIStatusBarStyle = @UI_STATUS_BAR_STYLE@;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "@SUPPORTED_ORIENTATIONS@";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "@SUPPORTED_ORIENTATIONS_IPAD";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "@SUPPORTED_ORIENTATIONS_IPAD@";
 				IPHONEOS_DEPLOYMENT_TARGET = @IPHONEOS_DEPLOYMENT_TARGET@;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
