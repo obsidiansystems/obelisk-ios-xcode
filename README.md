@@ -4,7 +4,7 @@ This project allows you to generate an xcode project for an obelisk frontend. Fr
 
 ## Instructions
 
-First, follow the [obelisk-ios-libfrontend](https://code.obsidian.systems/src/obelisk-ios-libfrontend/src/branch/main/README.md) readme to build the frontend as a library that can be imported by the xcode project.
+First, follow the [obelisk-ios-libfrontend](https://github.com/obsidiansystems/obelisk-ios-libfrontend/main/README.md) readme to build the frontend as a library that can be imported by the xcode project.
 
 Once you're able to build libfrontend, import this repository and invoke it like this in your Obelisk project's default.nix:
 
